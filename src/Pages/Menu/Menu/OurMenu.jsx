@@ -2,6 +2,9 @@ import { Helmet } from 'react-helmet-async';
 import Cover from '../../Shared/Cover';
 import banner from '../../../assets/menu/banner3.jpg'
 import dessertImg from '../../../assets/menu/dessert-bg.jpeg';
+import pizzaImg from '../../../assets/menu/pizza-bg.jpg';
+import saladImg from '../../../assets/menu/salad-bg.jpg';
+import soupImg from '../../../assets/menu/soup-bg.jpg';
 import useMenu from '../../../Hooks/useMenu';
 import SectionTitle from '../../../Components/SectionTitle';
 import MenuCategory from '../MenuCategory';
@@ -38,6 +41,19 @@ const OurMenu = () => {
             {/* desserts meny items */}
             <MenuCategory items={desserts}
             coverHeading={'DESSERTS'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={dessertImg}></MenuCategory>
+
+
+            {/*PIZZA meny items */}
+            <MenuCategory items={pizza}
+            coverHeading={'PIZZA'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={pizzaImg}></MenuCategory>
+
+            {/*salad meny items */}
+            <MenuCategory items={salad}
+            coverHeading={'SALADS'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={saladImg}></MenuCategory>
+
+            {/*salad meny items */}
+            <MenuCategory items={soup}
+            coverHeading={'SOUPS'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={soupImg}></MenuCategory>
 
 
 

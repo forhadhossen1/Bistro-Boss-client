@@ -3,7 +3,7 @@ import MenuItem from "../Shared/MenuItem";
 
 const MenuCategory = ({items, coverHeading, banner, coverDescription}) => {
     return (
-        <div>
+        <div className="pt-10">
             {coverHeading && <Cover
                 img={banner}
                 coverHeading={coverHeading}
