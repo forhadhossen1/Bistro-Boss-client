@@ -6,8 +6,8 @@ const MenuCategory = ({items, coverHeading, banner, coverDescription}) => {
         <div>
             {coverHeading && <Cover
                 img={banner}
-                coverHeading={'OUR MENU'}
-                coverDescription ={'Would you like to try a dish?'}
+                coverHeading={coverHeading}
+                coverDescription ={coverDescription}
             ></Cover>}
 
              <div className="grid md:grid-cols-2 gap-8 py-12">
