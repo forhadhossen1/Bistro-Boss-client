@@ -1,16 +1,17 @@
+import { Link } from "react-router-dom";
 import Cover from "../Shared/Cover";
 import MenuItem from "../Shared/MenuItem";
 
-const MenuCategory = ({items, coverHeading, banner, coverDescription}) => {
+const MenuCategory = ({ items, coverHeading, banner, coverDescription }) => {
     return (
         <div className="pt-10">
             {coverHeading && <Cover
                 img={banner}
                 coverHeading={coverHeading}
-                coverDescription ={coverDescription}
+                coverDescription={coverDescription}
             ></Cover>}
 
-             <div className="grid md:grid-cols-2 gap-8 py-12">
+            <div className="grid md:grid-cols-2 gap-8 py-12">
                 {
                     items.map(item => <MenuItem
                         key={item._id}
@@ -19,7 +20,7 @@ const MenuCategory = ({items, coverHeading, banner, coverDescription}) => {
                 }
             </div>
             <div className="flex justify-center">
-                <button className=" my-5 btn btn-outline border-0 border-b-4 ">Order Your Favourite Food</button>
+                <Link to='/order'><button className=" my-5 btn btn-outline border-0 border-b-4 ">Order Your Favourite Food</button></Link>
             </div>
         </div>
     );

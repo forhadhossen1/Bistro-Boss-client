@@ -40,20 +40,20 @@ const OurMenu = () => {
 
             {/* desserts meny items */}
             <MenuCategory items={desserts}
-            coverHeading={'DESSERTS'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={dessertImg}></MenuCategory>
+            coverHeading={'desserts'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={dessertImg}></MenuCategory>
 
 
             {/*PIZZA meny items */}
             <MenuCategory items={pizza}
-            coverHeading={'PIZZA'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={pizzaImg}></MenuCategory>
+            coverHeading={'pizza'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={pizzaImg}></MenuCategory>
 
             {/*salad meny items */}
             <MenuCategory items={salad}
-            coverHeading={'SALADS'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={saladImg}></MenuCategory>
+            coverHeading={'salads'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={saladImg}></MenuCategory>
 
             {/*salad meny items */}
             <MenuCategory items={soup}
-            coverHeading={'SOUPS'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={soupImg}></MenuCategory>
+            coverHeading={'soups'} coverDescription={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} banner={soupImg}></MenuCategory>
 
 
 
