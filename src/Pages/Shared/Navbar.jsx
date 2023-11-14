@@ -1,13 +1,47 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 
 const Navbar = () => {
+    const { user, logOut} = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+        .then(()=>{
+            Swal.fire({
+                title: "Log Out Success",
+                showClass: {
+                  popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                  `
+                },
+                hideClass: {
+                  popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                  `
+                }
+              });
+        })
+        .catch(error =>console.log(error))
+    }
 
     const navMenu = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/order'>Order Food</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        
+        {
+            user ? <>
+           <button onClick={handleLogOut} className=" btn-ghost">Log Out</button>
+            </>
+             :
+             <><li><Link to='/login'>Login</Link></li></>
+        }
     </>
 
     return (
@@ -18,7 +52,7 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52">
-                       {navMenu}
+                        {navMenu}
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">Bistro Boss</a>
