@@ -6,6 +6,7 @@ const Cover = ({ img, coverHeading, coverDescription }) => {
         <Parallax
             blur={{ min: -50, max: 50 }}
             bgImage={img}
+            bgClassName='object-cover'
             bgImageAlt="the menu"
             strength={-200}
         >
