@@ -69,7 +69,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <li>
-                    <Link to='/'>
+                    <Link to='/dashboard/cart'>
                         <button className="btn btn-ghost">
                         <FaCartShopping className="text-2xl"></FaCartShopping>
                             <div className="badge badge-secondary">+{carts.length}</div>
