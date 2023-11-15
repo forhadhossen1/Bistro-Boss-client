@@ -5,6 +5,8 @@ import OurMenu from "../Pages/Menu/Menu/OurMenu";
 import Order from "../Pages/Order/Order/Order";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignIn/SignUp";
+import Secret from "../Pages/Shared/Secret";
+import PrivetRouts from "./PrivetRouts";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
             {
                 path: '/order/:category',
                 element: <Order></Order>
+            },
+            {
+                path: '/order',
+                element: <Order></Order>
+            },
+            {
+                path : '/secret',
+                element : <PrivetRouts> <Secret></Secret></PrivetRouts>
             }
         ]
     },
