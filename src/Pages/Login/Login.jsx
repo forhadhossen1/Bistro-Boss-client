@@ -5,13 +5,14 @@ import { AuthContext } from '../../Providers/AuthProviders';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import GoogleLogin from '../../Components/SocialLogin/GoogleLogin';
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
     const { signIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-    
+
     const from = location.state?.from?.pathname || '/';
 
     useEffect(() => {
@@ -34,21 +35,21 @@ const Login = () => {
                 Swal.fire({
                     title: "Login Successfull",
                     showClass: {
-                      popup: `
+                        popup: `
                         animate__animated
                         animate__fadeInUp
                         animate__faster
                       `
                     },
                     hideClass: {
-                      popup: `
+                        popup: `
                         animate__animated
                         animate__fadeOutDown
                         animate__faster
                       `
                     }
-                  });
-                  navigate(from, {replace: true});
+                });
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error)
@@ -68,7 +69,7 @@ const Login = () => {
 
     return (
         <>
-        <Helmet>
+            <Helmet>
                 <title>Bistro Boss | Login</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
@@ -104,6 +105,12 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 {/* todo : apply disabled for re captcha */}
                                 <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
+
+                                <div className="divider ">OR</div>
+
+                                <GoogleLogin>
+
+                                </GoogleLogin>
                             </div>
                             <p className='text-center'>New here please<Link to='/signUp'><button className="btn btn-link">Sign Up</button></Link> </p>
                         </form>
