@@ -1,36 +1,67 @@
-import { FaAddressBook, FaCalendar, FaCartShopping, FaEnvelope, FaMoneyBill, FaStar } from "react-icons/fa6";
+import { FaAddressBook, FaBook, FaCalendar, FaCartShopping, FaEnvelope, FaList, FaMoneyBill, FaStar, FaUsers, FaUtensils } from "react-icons/fa6";
 import { FaHome, FaSearch } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
+
+    //  todo : get isAdmin value from the database
+    const isAdmin = true;
+
     return (
         <div className="flex">
 
             <div className="w-64 min-h-screen bg-orange-400">
-                <ul className="menu p-6 space-y-5 uppercase">
-                    <li><NavLink to='/dashboard/userHome'>
-                        <FaHome />  User Home
-                    </NavLink></li>
+                <ul className="menu p-6 space-y-5 uppercase font-bold">
+                    {
+                        isAdmin ?
+                            <>
+                                <li><NavLink to='/dashboard/adminHome'>
+                                    <FaHome />  Admin Home
+                                </NavLink></li>
 
-                    <li><NavLink to='/dashboard/reservation'>
-                        <FaCalendar /> Reservation
-                    </NavLink></li>
+                                <li><NavLink to='/dashboard/addItmes'>
+                                    <FaUtensils /> Add Items
+                                </NavLink></li>
 
-                    <li><NavLink to='/dashboard/paymentHistory'>
-                        <FaMoneyBill />Payment History
-                    </NavLink></li>
+                                <li><NavLink to='/dashboard/manageItmes'>
+                                    <FaList /> Manage Items
+                                </NavLink></li>
 
-                    <li><NavLink to='/dashboard/cart'>
-                        <FaCartShopping></FaCartShopping>   My Cart
-                    </NavLink></li>
+                                <li><NavLink to='/dashboard/manageBooking'>
+                                    <FaBook /> Manage Booking
+                                </NavLink></li>
 
-                    <li><NavLink to='/dashboard/review'>
-                        <FaStar />Add Review
-                    </NavLink></li>
+                                <li><NavLink to='/dashboard/allUsers'>
+                                    <FaUsers></FaUsers>  All Users
+                                </NavLink></li>
+                            </>
+                            :
+                            <>
+                                <li><NavLink to='/dashboard/userHome'>
+                                    <FaHome />  User Home
+                                </NavLink></li>
 
-                    <li><NavLink to='/dashboard/boking'>
-                        <FaAddressBook />My Booking
-                    </NavLink></li>
+                                <li><NavLink to='/dashboard/reservation'>
+                                    <FaCalendar /> Reservation
+                                </NavLink></li>
+
+                                <li><NavLink to='/dashboard/paymentHistory'>
+                                    <FaMoneyBill />Payment History
+                                </NavLink></li>
+
+                                <li><NavLink to='/dashboard/cart'>
+                                    <FaCartShopping></FaCartShopping>   My Cart
+                                </NavLink></li>
+
+                                <li><NavLink to='/dashboard/review'>
+                                    <FaStar />Add Review
+                                </NavLink></li>
+
+                                <li><NavLink to='/dashboard/boking'>
+                                    <FaAddressBook />My Booking
+                                </NavLink></li>
+                            </>
+                    }
 
                     <div className="divider"></div>
 
@@ -45,7 +76,7 @@ const Dashboard = () => {
                     </NavLink></li>
 
                     <li><NavLink to='/contact'>
-                        <FaEnvelope/> Contact
+                        <FaEnvelope /> Contact
                     </NavLink></li>
                 </ul>
             </div>

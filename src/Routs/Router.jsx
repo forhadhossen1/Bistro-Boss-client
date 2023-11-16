@@ -10,6 +10,7 @@ import PrivetRouts from "./PrivetRouts";
 import Dashboard from "../Layouts/Dashboard/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import UserHome from "../Pages/Dashboard/Home/UserHome";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 const router = createBrowserRouter([
     {
@@ -33,29 +34,40 @@ const router = createBrowserRouter([
                 element: <Order></Order>
             },
             {
-                path : '/secret',
-                element : <PrivetRouts> <Secret></Secret></PrivetRouts>
+                path: '/secret',
+                element: <PrivetRouts> <Secret></Secret></PrivetRouts>
             }
         ]
     },
     {
-        path : '/login',
+        path: '/login',
         element: <Login></Login>
     },
     {
-        path : '/signUp',
-        element:<SignUp></SignUp>
+        path: '/signUp',
+        element: <SignUp></SignUp>
     },
     {
         path: '/dashboard',
-        element : <PrivetRouts><Dashboard></Dashboard></PrivetRouts>,
-        children : [
+        element: <PrivetRouts><Dashboard></Dashboard></PrivetRouts>,
+        children: [
+
+            // admin related routs 
             {
-                path : 'cart',
+                path: 'allUsers',
+                element: <AllUsers></AllUsers>
+            },
+
+
+
+
+            // User related Routes........... 
+            {
+                path: 'cart',
                 element: <Cart></Cart>
             },
             {
-                path : 'userHome',
+                path: 'userHome',
                 element: <UserHome></UserHome>
             }
         ]
