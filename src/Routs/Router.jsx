@@ -13,6 +13,7 @@ import UserHome from "../Pages/Dashboard/Home/UserHome";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddItems from "../Pages/Dashboard/adminPages/AddItems";
 import AdminRouts from "./AdminRouts";
+import ManageItems from "../Pages/Dashboard/adminPages/ManageItems";
 
 const router = createBrowserRouter([
     {
@@ -57,13 +58,17 @@ const router = createBrowserRouter([
             // admin related routs 
             {
                 path: 'addItems',
-                element : <AdminRouts> <AddItems></AddItems></AdminRouts>
+                element: <AdminRouts> <AddItems></AddItems></AdminRouts>
+            },
+            {
+                path: 'manageItems',
+                element: <AdminRouts><ManageItems></ManageItems></AdminRouts>
             },
             {
                 path: 'allUsers',
                 element: <AdminRouts> <AllUsers></AllUsers></AdminRouts>
             },
-            
+
 
 
 
