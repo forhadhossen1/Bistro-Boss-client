@@ -3,7 +3,7 @@ import useAdmin from "../Hooks/useAdmin";
 import useAuth from "../Hooks/useAuth";
 
 const AdminRouts = ({ children }) => {
-    const { user, loading } = useAuth;
+    const { user, loading } = useAuth();
     const [isAdmin, isAdminLoading] = useAdmin();
     const location = useLocation();
 
@@ -13,8 +13,8 @@ const AdminRouts = ({ children }) => {
         return <progress className="progress w-56"></progress>
     }
 
-    // if (user && isAdmin) {
-    if (isAdmin) {
+    if (user && isAdmin) {
+    // if (isAdmin) {
         return children
     } else {
 
