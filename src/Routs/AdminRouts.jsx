@@ -13,10 +13,13 @@ const AdminRouts = ({ children }) => {
         return <progress className="progress w-56"></progress>
     }
 
-    if (user && isAdmin) {
+    // if (user && isAdmin) {
+    if (isAdmin) {
         return children
+    } else {
+
+        return <Navigate to='/' state={{ from: location }} replace></Navigate>
     }
-    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
 
 };
 

@@ -11,6 +11,8 @@ import Dashboard from "../Layouts/Dashboard/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import UserHome from "../Pages/Dashboard/Home/UserHome";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddItems from "../Pages/Dashboard/adminPages/AddItems";
+import AdminRouts from "./AdminRouts";
 
 const router = createBrowserRouter([
     {
@@ -54,9 +56,14 @@ const router = createBrowserRouter([
 
             // admin related routs 
             {
+                path: 'addItems',
+                element : <AdminRouts> <AddItems></AddItems></AdminRouts>
+            },
+            {
                 path: 'allUsers',
                 element: <AllUsers></AllUsers>
             },
+            
 
 
 
