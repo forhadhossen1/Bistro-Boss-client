@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 const CheckoutForm = () => {
@@ -16,6 +17,7 @@ const CheckoutForm = () => {
     const axiosSecure = useAxiosSecure();
     const [error, setError] = useState('');
     const [cart, refetch] = useCart();
+    const navigate = useNavigate();
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
     useEffect(() => {
@@ -87,10 +89,11 @@ const CheckoutForm = () => {
                     Swal.fire({
                         position: "top-center",
                         icon: "success",
-                        title: "Your work has been saved",
+                        title: "Your payment has been success",
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    navigate('/dashboard/paymentHistory')
                 }
                 refetch();
             }
