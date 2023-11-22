@@ -67,6 +67,18 @@ const CheckoutForm = () => {
                 setTransactionId(paymentIntent.id);
 
                 //now sava the payment in the database ....
+                const payment = {
+                    email: user.email,
+                    price: totalPrice,
+                    transactionId: paymentIntent.id,
+                    date: new Date(), //utc date convert. use momnet js
+                    cartIds: cart.map(item => item._id),
+                    menuItemIds: cart.map(item => item.menuId),
+                    status: 'pending'
+                }
+
+                const res = await axiosSecure.post('/payments', payment);
+                console.log('payment saved',res.data)
             }
         }
 
